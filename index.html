@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Things Givers</title>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/tildasans.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- <div class="preload"><img src="./assets/img/tokenimg.png" alt="" /></div> -->
+
+    <main class="main">
+      <div class="wrapper">
+        <div class="main-info">
+          <h1>Things Givers Monitoring</h1>
+          <p class="warning">
+            <b>
+              Wait couple of minutes to get data loaded. It depends on TON API
+              response</b
+            >
+          </p>
+        </div>
+        <div class="mining-tokens-cont">
+          <div class="mining-tokens__percentile-cont">
+            <div class="mining-tokens__percentile">
+              <span class="mining-tokens__span">loading...</span>
+            </div>
+          </div>
+          <div class="mining-tokens-line__cont">
+            <div class="mining-tokens-line__fill"></div>
+          </div>
+          <div class="mining-tokens__count-cont">
+            <div class="mining-tokens__count">
+              <p class="mining-tokens__p">wait until all wallets will be loaded!</p>
+            </div>
+          </div>
+        </div>
+        <div class="burnt-tokens-cont">
+          <div class="burnt-tokens__percentile-cont">
+            <div class="burnt-tokens__percentile">
+              <span class="burnt-tokens__span">loading...</span>
+            </div>
+          </div>
+          <div class="burnt-tokens-line__cont">
+            <div class="burnt-tokens-line__fill"></div>
+          </div>
+          <div class="burnt-tokens__count-cont">
+            <div class="burnt-tokens__count">
+              <p class="burnt-tokens__p"></p>
+            </div>
+          </div>
+        </div>
+        <div class="givers-container lottery" id="lottery"></div>
+        <div class="givers-list">
+          <div class="givers-container" id="small">
+            <div class="givers-header">
+              <!-- <button class="btn-collapse"></button> -->
+              <h2>Reward: 200</h2>
+            </div>
+          </div>
+          <div class="givers-container" id="extraSmall">
+            <div class="givers-header">
+              <!-- <button class="btn-collapse"></button> -->
+              <h2>Reward: 100</h2>
+            </div>
+          </div>
+
+          <div class="givers-container givers-collapsed" id="extraLarge">
+            <div class="givers-header">
+              <h2>Reward: 10000 (depleted)</h2>
+              <button class="btn-collapse"></button>
+            </div>
+          </div>
+          <div class="givers-container givers-collapsed" id="large">
+            <div class="givers-header">
+              <h2>Reward: 5000 (depleted)</h2>
+              <button class="btn-collapse"></button>
+            </div>
+          </div>
+          <div class="givers-container givers-collapsed" id="medium">
+            <div class="givers-header">
+              <h2>Reward: 1000 (depleted)</h2>
+              <button class="btn-collapse"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./assets/scripts/wallets.js"></script>
+    <script src="./assets/scripts/script.js"></script>
+  </body>
+</html>
