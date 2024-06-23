@@ -439,15 +439,17 @@ async function updateBurnedTokens() {
     console.error("Error while updating Burned Tokens", e.message);
   }
 }
-
 async function updateMinedTokens() {
   try {
     let totalMined = 0;
     const totalCapacity = 250000000;
     for (const category in currentBalances) {
       for (const wallet in currentBalances[category]) {
-        totalMined +=
-          5000000 - ((currentBalances[category][wallet] / 1000000000)  );
+        // if (currentBalances[category][wallet] > 0) {
+          const maxBalance = category === "lottery" ? 10000000 : 5000000;
+          const balance = currentBalances[category][wallet];
+          totalMined +=  maxBalance - balance; // накопленные токены
+        
       }
     }
     let shownMiningTokens = totalMined
@@ -457,6 +459,7 @@ async function updateMinedTokens() {
     if (isNaN(totalMined)) {
       return;
     }
+
     let loadedwallets = 0;
     for (const category in walletLoadStatus) {
       for (const wallet in walletLoadStatus[category]) {
@@ -465,6 +468,7 @@ async function updateMinedTokens() {
         }
       }
     }
+
     let miningTokensCont = d.querySelector(".mining-tokens-cont");
     miningTokensCont.querySelector(
       ".mining-tokens-line__fill"
@@ -475,10 +479,10 @@ async function updateMinedTokens() {
     miningTokensCont.querySelector(
       ".mining-tokens__total-wallets__span"
     ).textContent = `${loadedwallets}/${totalwallets}`;
-    if(loadedwallets == totalwallets){
+    if (loadedwallets == totalwallets) {
       miningTokensCont.querySelector(
-      ".mining-tokens__total-wallets__span"
-    ).style.color=`#8b8b8b`;
+        ".mining-tokens__total-wallets__span"
+      ).style.color = "gray";
     }
     miningTokensCont.querySelector(
       ".mining-tokens__p"
@@ -503,7 +507,7 @@ async function updateWallets() {
         // if(success){
         //   walletLoadStatus[category][wallet] = true
         // }
-        await updateWallet(wallet, category, totalwallets);
+        await updateWallet(wallet, category);
         await new Promise((resolve) => setTimeout(resolve, 2000));
       }
     }
