@@ -130,6 +130,13 @@ h2 {
     }
   }
   .mining-tokens {
+    &__percentile-cont{
+      justify-content: space-between;
+
+    }
+    &__total-wallets__span{
+      color: #000;
+    }
     &__p{
       color:#c14848
     }

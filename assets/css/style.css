@@ -154,6 +154,12 @@ h2 {
     right: -10px;
   }
 }
+.main .mining-tokens__percentile-cont {
+  justify-content: space-between;
+}
+.main .mining-tokens__total-wallets__span {
+  color: #000;
+}
 .main .mining-tokens__p {
   color: #c14848;
 }
